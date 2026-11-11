@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk:MORF@15&display=swap');
+
+body {
+  min-height: 90vh; 
+  margin: 0; 
+  background: linear-gradient(135deg, #1a1c29, #2b3a67, #496a81, #68b0ab, #522b5b);
+  background-attachment: fixed; 
+  color: #f8f9fa;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  min-width: 370px;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+    
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    background-color: transparent;
+    font-size: 100px;
+    margin-block-start: -15px;
+    margin-block-end: -10px;
+}
+
+.subtitulo{
+    font-size: 36px;
+    margin-block-start: 0px;
+    margin-block-end: 10px;
+}
+
+.tarjetas, .botones-ataque{
+    display: flex;
+    
+}
+
+.tarjetas-mokepon{
+    width: 125px;
+    height: 180px;
+    background-color: #2b3a67;
+    padding: 6px;
+    box-sizing: border-box;
+    margin: 10px;
+    border : 1px solid blueviolet;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+/* --- ESTILO BASE DE LAS TARJETAS --- */
+.tarjeta-mokepon {
+    position: relative;
+    background: linear-gradient(135deg, #141a29 0%, #1a233a 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* Si tus tarjetas usan otra forma, mantén tu clip-path o border-radius actual */
+}
+
+
+.tarjetas-mokepon:hover, input:checked + label {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    background: linear-gradient(135deg, #3d0c0c 0%, #611313 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 42, 42, 0.8),
+        0 0 25px rgba(255, 42, 42, 1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+p{
+    margin : 6px;
+    font-size: 24px;
+}
+
+.tarjetas-mokepon img{
+    width: 120px;
+}
+
+input{
+    display: none;
+}
+
+#caja-botones{
+    display: flex;    
+}
+
+.botones-movimiento {
+    width: 66px;
+    height: 60px;
+    margin-right: 57px;
+    border-radius: 15px;
+    font-size: 39px;
+    border-color: #808080;
+    background: linear-gradient(135deg, #141a29 0%, #1a233a 100%);
+    box-shadow: inset 0 0 10px #496a81, 0 0 15px #496a81;
+    
+}
+
+/* Estilos base para los botones futuristas */
+.sci-fi-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #141a29 0%, #1a233a 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    outline: none;
+    
+    /* Recorte de esquinas típico de diseño sci-fi */
+    clip-path: polygon(
+        15px 0, 
+        calc(100% - 15px) 0, 
+        100% 15px, 
+        100% calc(100% - 15px), 
+        calc(100% - 15px) 100%, 
+        15px 100%, 
+        0 calc(100% - 15px), 
+        0 15px
+    );
+    transition: all 0.3s ease; 
+} 
+/* Variante Violeta Neón para "Seleccionar" */
+.btn-select {
+    width: 200px;
+    border-color: #d900ff;
+    color: #ffffff;
+    box-shadow: 
+        inset 0 0 10px rgba(217, 0, 255, 0.4),
+        0 0 15px rgba(217, 0, 255, 0.5);
+}
+
+.btn-select:hover {
+    background: linear-gradient(135deg, #2a1138 0%, #4a135a 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(217, 0, 255, 0.7),
+        0 0 25px rgba(217, 0, 255, 0.9);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Variante Azul (Inspirada en los botones superiores e inferiores) */
+.btn-blue {
+    border-color: #00d2ff;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 210, 255, 0.4),
+        0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.btn-blue:hover {
+    background: linear-gradient(135deg, #1a233a 0%, #0f3460 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 210, 255, 0.7),
+        0 0 25px rgba(0, 210, 255, 0.9);
+}
+
+/* Variante Naranja / Dorado (Inspirada en los botones centrales) */
+.btn-orange {
+    border-color: #ff9900;
+    box-shadow: 
+        inset 0 0 10px rgba(255, 153, 0, 0.4),
+        0 0 15px rgba(255, 153, 0, 0.5);
+}
+
+.btn-orange:hover {
+    background: linear-gradient(135deg, #3e2716 0%, #60380f 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 153, 0, 0.7),
+        0 0 25px rgba(255, 153, 0, 0.9);
+}
+
+/* Nueva Variante Verde */
+.btn-green {
+    border-color: #00ff66;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 255, 102, 0.4),
+        0 0 15px rgba(0, 255, 102, 0.5);
+}
+
+.btn-green:hover {
+    background: linear-gradient(135deg, #122b1c 0%, #174227 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(0, 255, 102, 0.7),
+        0 0 25px rgba(0, 255, 102, 0.9);
+}
+
+/* Variante Rojo Neón para "Reiniciar" */
+.btn-restart {
+    width: 200px;
+    border-color: #ff2a2a;
+    color: #ffffff;
+    box-shadow: 
+        inset 0 0 10px rgba(255, 42, 42, 0.4),
+        0 0 15px rgba(255, 42, 42, 0.5);
+}
+
+.btn-restart:hover {
+    background: linear-gradient(135deg, #3d0c0c 0%, #611313 100%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 42, 42, 0.8),
+        0 0 25px rgba(255, 42, 42, 1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+#mensajes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 130px;
+    margin: 15px;
+    background-color: #0f3460;
+}
+
+.carta-ataques{
+    display: grid;
+    grid-template-columns: 160px 160px;
+    grid-column-gap: 40px;
+    font-family: 'Russo One', sans-serif;
+    color: #97D7FF;
+}
+.ataques-jugador, .ataques-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ver-mapa{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}   
+
+#titulo-mapa{
+    font-size: 40px;
+    margin-top: 10px;
+}
+#mapa{
+    margin: 35px;
+}
+
+
+
+@media(max-width: 500px){
+    .tarjetas{
+        flex-direction: column;
+    }
+    .titulo{
+        font-size: 60px;
+    }
+    .subtitulo{
+        font-size: 26px;
+    }
+    .tarjetas-mokepon{
+        font-size: 18px;
+    }
+    .p{
+        font-size: 16px;
+    }
+}
+@media(max-width: 700px){
+    .botones-ataque{
+        flex-direction: column;
+    }
+}
