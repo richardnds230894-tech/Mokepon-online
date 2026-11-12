@@ -276,9 +276,14 @@ input{
 }
 
 canvas {
+<<<<<<< HEAD
     display: block;
     width: 100%;
     height: auto;
+=======
+    width: 100% !important;
+    height: auto !important;
+>>>>>>> fc31f9b43dd6fa38bd88b1c46de8bdc2935859e0
     background-color: #f0f0f0;
     border-radius: 10px;
     touch-action: none; /* Evita que la pantalla se mueva al arrastrar el dedo en el mapa */
