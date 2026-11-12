@@ -48,14 +48,9 @@ let lienzo = mapa.getContext("2d")
 let intervalo
 let mapaBackground = new Image()
 mapaBackground.src = "./assets/mokemap2.jpeg"
-<<<<<<< HEAD
 
 // Calculamos el tamaño del canvas en función del ancho visible real del contenedor,
 // así el espacio lógico de movimiento siempre coincide con lo que se ve en pantalla.
-=======
-let alturaQueBuscamos
-let anchoDelMapa = mapa.parentElement.clientWidth
->>>>>>> fc31f9b43dd6fa38bd88b1c46de8bdc2935859e0
 const anchoMaximoDelMapa = 450
 const anchoDelMapa = Math.min(mapa.parentElement.clientWidth || window.innerWidth - 20, anchoMaximoDelMapa)
 const alturaQueBuscamos = Math.round(anchoDelMapa * 600 / 800)
