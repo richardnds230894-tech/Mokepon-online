@@ -268,22 +268,19 @@ input{
 }*/
 #mapa-contenedor {
     width: 100%;
-    max-width: 400px; /* Ancho máximo ideal para celulares */
+    max-width: 450px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita elementos desbordados */
 }
 
-/* El canvas se escala automáticamente manteniendo su proporción */
 canvas {
-    width: 100% !important;
-    max-width: 320px;
-    height: auto !important;
+    display: block;
+    width: 100%;
+    height: auto;
     background-color: #f0f0f0;
     border-radius: 10px;
-    object-fit: contain;
     touch-action: none; /* Evita que la pantalla se mueva al arrastrar el dedo en el mapa */
 }
 button {

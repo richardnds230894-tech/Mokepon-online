@@ -48,15 +48,12 @@ let lienzo = mapa.getContext("2d")
 let intervalo
 let mapaBackground = new Image()
 mapaBackground.src = "./assets/mokemap2.jpeg"
-let alturaQueBuscamos
-let anchoDelMapa = window.innerWidth - 20
+
+// Calculamos el tamaño del canvas en función del ancho visible real del contenedor,
+// así el espacio lógico de movimiento siempre coincide con lo que se ve en pantalla.
 const anchoMaximoDelMapa = 450
-
-if (anchoDelMapa > anchoMaximoDelMapa) {
-    anchoDelMapa = anchoMaximoDelMapa
-}
-
-alturaQueBuscamos = anchoDelMapa * 600 / 800
+const anchoDelMapa = Math.min(mapa.parentElement.clientWidth || window.innerWidth - 20, anchoMaximoDelMapa)
+const alturaQueBuscamos = Math.round(anchoDelMapa * 600 / 800)
 
 mapa.width = anchoDelMapa
 mapa.height = alturaQueBuscamos
@@ -443,7 +440,7 @@ function moverDerecha() {
 
 function moverAbajo() {
     
-    let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto;
+    let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto - 5;
     if (mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY <= limiteAbajo) {
         mascotaJugadorObjeto.velocidadY = 5
     }else{
