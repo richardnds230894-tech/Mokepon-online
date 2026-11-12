@@ -250,9 +250,13 @@ input{
 }
 
 #ver-mapa{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }   
 
 #titulo-mapa{
@@ -268,14 +272,18 @@ input{
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita elementos desbordados */
 }
 
 /* El canvas se escala automáticamente manteniendo su proporción */
 canvas {
     width: 100% !important;
+    max-width: 320px;
     height: auto !important;
     background-color: #f0f0f0;
     border-radius: 10px;
+    object-fit: contain;
     touch-action: none; /* Evita que la pantalla se mueva al arrastrar el dedo en el mapa */
 }
 button {
@@ -285,13 +293,19 @@ button {
 }
 
 
-
+@media(max-width: 700px){
+    .botones-ataque{
+        flex-direction: column;
+    }
+}
 @media(max-width: 500px){
     .tarjetas{
         flex-direction: column;
     }
     .titulo{
-        font-size: 60px;
+        font-size: 32px; /* Reducimos el tamaño para que quepa en una sola línea */
+        text-align: center;
+        padding: 0 10px;
     }
     .subtitulo{
         font-size: 26px;
@@ -299,12 +313,5 @@ button {
     .tarjetas-mokepon{
         font-size: 18px;
     }
-    .p{
-        font-size: 16px;
-    }
-}
-@media(max-width: 700px){
-    .botones-ataque{
-        flex-direction: column;
-    }
+    
 }

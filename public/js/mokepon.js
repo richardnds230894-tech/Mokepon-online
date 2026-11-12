@@ -436,7 +436,6 @@ function moverDerecha() {
     let limiteDerecha = mapa.width - mascotaJugadorObjeto.ancho - 5;
     if (mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX <= limiteDerecha) {
         mascotaJugadorObjeto.velocidadX = 5
-        /*mascotaJugadorObjeto.x += mascotaJugadorObjeto.velocidadX;*/
     }else{
         detenerMovimiento()
     }
@@ -447,7 +446,6 @@ function moverAbajo() {
     let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto;
     if (mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY <= limiteAbajo) {
         mascotaJugadorObjeto.velocidadY = 5
-        /*mascotaJugadorObjeto.y += mascotaJugadorObjeto.velocidadY;*/
     }else{
         detenerMovimiento()
     }
@@ -458,7 +456,6 @@ function moverIzquierda() {
     
     if (mascotaJugadorObjeto.x - mascotaJugadorObjeto.velocidadX >= 10) {
         mascotaJugadorObjeto.velocidadX = - 5
-        /*mascotaJugadorObjeto.x -= mascotaJugadorObjeto.velocidadX;*/
     }else{
         detenerMovimiento()
     }
@@ -468,7 +465,6 @@ function moverArriba() {
     
     if (mascotaJugadorObjeto.y - mascotaJugadorObjeto.velocidadY >= 10) {
         mascotaJugadorObjeto.velocidadY = - 5
-        /*mascotaJugadorObjeto.y -= mascotaJugadorObjeto.velocidadY;*/  
     }else{
         detenerMovimiento()
     }   
