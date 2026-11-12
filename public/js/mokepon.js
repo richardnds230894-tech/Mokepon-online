@@ -153,7 +153,7 @@ botonReiniciar.addEventListener("click", reiniciar)
 unirseAlJuego()
 
 function unirseAlJuego() {
-    fetch("http://192.168.100.158:8080/unirse")
+    fetch("http://192.168.100.16:8080/unirse")
         .then(function (res) {
 
             if (res.ok) {
@@ -190,7 +190,7 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMokepon(mascotaJugador) {
-    fetch(`http://192.168.100.158:8080/mokepon/${jugadorId}`, {
+    fetch(`http://192.168.100.16:8080/mokepon/${jugadorId}`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -249,7 +249,7 @@ function secuenciaDeAtaques() {
 }
 
 function enviarAtaque() {
-    fetch(`http://192.168.100.158:8080/mokepon/${jugadorId}/ataques`, {
+    fetch(`http://192.168.100.16:8080/mokepon/${jugadorId}/ataques`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -263,7 +263,7 @@ function enviarAtaque() {
 }
 
 function obtenerAtaques() {
-    fetch(`http://192.168.100.158:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`http://192.168.100.16:8080/mokepon/${enemigoId}/ataques`)
         .then(function (res) {
             if (res.ok) {
                 res.json()
@@ -392,7 +392,7 @@ function pintarCanvas() {
 }
 
 function enviarPosicion(x, y) {
-    fetch(`http://192.168.100.158:8080/mokepon/${jugadorId}/posicion`, {
+    fetch(`http://192.168.100.16:8080/mokepon/${jugadorId}/posicion`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -432,17 +432,48 @@ function enviarPosicion(x, y) {
 }
 
 function moverDerecha() {
-    mascotaJugadorObjeto.velocidadX = 5
+    
+    let limiteDerecha = mapa.width - mascotaJugadorObjeto.ancho - 5;
+    if (mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX <= limiteDerecha) {
+        mascotaJugadorObjeto.velocidadX = 5
+        /*mascotaJugadorObjeto.x += mascotaJugadorObjeto.velocidadX;*/
+    }else{
+        detenerMovimiento()
+    }
 }
+
 function moverAbajo() {
-    mascotaJugadorObjeto.velocidadY = 5
+    
+    let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto;
+    if (mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY <= limiteAbajo) {
+        mascotaJugadorObjeto.velocidadY = 5
+        /*mascotaJugadorObjeto.y += mascotaJugadorObjeto.velocidadY;*/
+    }else{
+        detenerMovimiento()
+    }
+    
 }
+
 function moverIzquierda() {
-    mascotaJugadorObjeto.velocidadX = - 5
+    
+    if (mascotaJugadorObjeto.x - mascotaJugadorObjeto.velocidadX >= 10) {
+        mascotaJugadorObjeto.velocidadX = - 5
+        /*mascotaJugadorObjeto.x -= mascotaJugadorObjeto.velocidadX;*/
+    }else{
+        detenerMovimiento()
+    }
 }
+
 function moverArriba() {
-    mascotaJugadorObjeto.velocidadY = - 5
+    
+    if (mascotaJugadorObjeto.y - mascotaJugadorObjeto.velocidadY >= 10) {
+        mascotaJugadorObjeto.velocidadY = - 5
+        /*mascotaJugadorObjeto.y -= mascotaJugadorObjeto.velocidadY;*/  
+    }else{
+        detenerMovimiento()
+    }   
 }
+
 
 function detenerMovimiento() {
     mascotaJugadorObjeto.velocidadX = 0

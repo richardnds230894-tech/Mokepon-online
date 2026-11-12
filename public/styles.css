@@ -278,6 +278,11 @@ canvas {
     border-radius: 10px;
     touch-action: none; /* Evita que la pantalla se mueva al arrastrar el dedo en el mapa */
 }
+button {
+  touch-action: manipulation; /* Evita retrasos y zooms extraños en los botones táctiles */
+  user-select: none;          /* Evita que se seleccione texto por accidente al mantener presionado */
+  -webkit-user-select: none;
+}
 
 
 
