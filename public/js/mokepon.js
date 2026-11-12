@@ -49,7 +49,7 @@ let intervalo
 let mapaBackground = new Image()
 mapaBackground.src = "./assets/mokemap2.jpeg"
 let alturaQueBuscamos
-let anchoDelMapa = window.innerWidth - 20
+let anchoDelMapa = mapa.parentElement.clientWidth
 const anchoMaximoDelMapa = 450
 
 if (anchoDelMapa > anchoMaximoDelMapa) {
@@ -443,7 +443,7 @@ function moverDerecha() {
 
 function moverAbajo() {
     
-    let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto;
+    let limiteAbajo = mapa.height - mascotaJugadorObjeto.alto - 5;
     if (mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY <= limiteAbajo) {
         mascotaJugadorObjeto.velocidadY = 5
     }else{
